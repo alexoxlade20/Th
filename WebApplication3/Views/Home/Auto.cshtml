@@ -1,0 +1,84 @@
+﻿@model WebApplication3.Models.User
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Личный кабинет</title>
+</head>
+<body>
+    <div>
+        @using (Ajax.BeginForm("LK", new AjaxOptions { UpdateTargetId = "results" }))
+        {
+            @Html.LabelFor(model => model.Login, "Логин")
+            <br />
+            @Html.EditorFor(model => model.Login)
+            <br />
+            <br />
+            @Html.LabelFor(model => model.Password, "Пароль");
+            <br />
+            @Html.EditorFor(model => model.Password)
+            <br />
+            <br />
+            @Html.LabelFor(model => model.Name, "Имя")
+            <br />
+            @Html.EditorFor(model => model.Name)
+            <br />
+            <br />
+            @Html.LabelFor(model => model.Surname, "Фамилия");
+            <br />
+            @Html.EditorFor(model => model.Surname)
+            <br />
+            <br />
+            @Html.LabelFor(model => model.Ot, "Отчество")
+            <br />
+            @Html.EditorFor(model => model.Ot)
+            <br />
+            <br />
+            @Html.LabelFor(model => model.Email, "Email");
+            <br />
+            @Html.EditorFor(model => model.Email)
+            <br />
+            <br />
+            @Html.LabelFor(model => model.Address, "Адрес")
+            <br />
+            @Html.EditorFor(model => model.Address)
+            <br />
+            <br />
+            @Html.LabelFor(model => model.Birth, "Дата рождения");
+            <br />
+            @Html.EditorFor(model => model.Birth)
+            <br />
+            <br />
+            @Html.LabelFor(model => model.Number, "Номер телефона")
+            <br />
+            @Html.EditorFor(model => model.Number)
+            <br />
+            <input type="submit" value="Сохранить изменения" />
+        }
+        @using (Ajax.BeginForm("Del", new AjaxOptions { UpdateTargetId = "results" }))
+        {
+            @Html.LabelFor(model => model.Login, "Логин")
+            <br />
+            @Html.EditorFor(model => model.Login)
+            <br />
+            <br />
+            <input type="submit" value="Удалить все данные" />
+        }
+        <a href="javascript: history.go(-1)">Выйти</a>
+        <h1>Каталог товаров</h1>
+        <td>
+        <td>Air Max 90</td>
+        <td><a href="/Home/Buy">Купить</a></td>
+        </td><br />
+        <td>
+        <td>Air Force Low</td>
+        <td><a href="/Home/Buy">Купить</a></td>
+        </td>
+    </div>
+</body>
+</html>
